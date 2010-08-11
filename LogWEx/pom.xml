@@ -25,10 +25,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>sewatech</groupId>
-    <artifactId>logging-web-extras</artifactId>
+    <artifactId>logwex-core</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>LogWEx core</name>
     <description>Logging Extras for Web Applications</description>
-
+    <url>http://logwex.sewatech.org/</url>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -37,10 +39,33 @@
     <developers>
         <developer>
             <name>Alexis Hassler</name>
-            <email>alexis.hassler at sewatech.fr</email>
+            <email>alexis at sewatech.org</email>
             <url>http://www.alexis-hassler.com/</url>
         </developer>
     </developers>
+
+    <issueManagement>
+        <url>http://github.com/hasalex/logwex/issues</url>
+    </issueManagement>
+
+    <scm>
+        <developerConnection>scm:git@github.com:hasalex/logwex.git</developerConnection>
+        <connection>scm:git://github.com/hasalex/logwex.git</connection>
+        <url>http://github.com/hasalex/logwex</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>GNU LGPL</name>
+            <distribution>???</distribution>
+            <comments>LogWEx is distributed under the GNU LGPL license wich is based on the GNU GPL license.</comments>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+        </license>
+        <license>
+            <name>GNU GPL</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
 
     <build>
         <plugins>
@@ -98,33 +123,55 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>catalina</artifactId>
+            <version>6.0.28</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>coyote</artifactId>
+            <version>6.0.28</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>catalina</artifactId>
-            <version>6.0.28</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>coyote</artifactId>
-            <version>6.0.28</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.8.3</version>
-        </dependency>
-        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>1.8.5</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <reporting>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.1</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>dependencies</report>
+                <report>project-team</report>
+                <report>issue-tracking</report>
+                <report>license</report>
+                <report>scm</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+      </plugins>
+    </reporting>
+    
 </project>
