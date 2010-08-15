@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Sewatech
+  ~
+  ~ This file is part of LogWEx.
+  ~
+  ~ LogWEx is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as
+  ~ published bythe Free Software Foundation, in version 3 of the
+  ~ License.
+  ~
+  ~ LogWEx is distributed in the hope that it will be useful, but
+  ~ WITHOUT ANY WARRANTY; without even the implied warranty
+  ~ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  ~ See the GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General
+  ~ Public License along with LogWEx.  If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->        
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.sewatech</groupId>
+    <artifactId>logwex-parent</artifactId>
+    <name>LogWEx parent</name>
+    <version>1.0-SNAPSHOT</version>
+    <url>http://logwex.sewatech.org/</url>
+    <packaging>pom</packaging>
+
+    <properties>
+        <logwex.version>1.0-SNAPSHOT</logwex.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>Alexis Hassler</name>
+            <email>alexis at sewatech.org</email>
+            <url>http://www.alexis-hassler.com/</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <developerConnection>scm:git@github.com:hasalex/logwex.git</developerConnection>
+        <connection>scm:git://github.com/hasalex/logwex.git</connection>
+        <url>http://github.com/hasalex/logwex</url>
+    </scm>
+
+    <issueManagement>
+        <url>http://github.com/hasalex/logwex/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>GNU LGPL</name>
+            <distribution>???</distribution>
+            <comments>LogWEx is distributed under the GNU LGPL license wich is based on the GNU GPL license.</comments>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+        </license>
+        <license>
+            <name>GNU GPL</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        
+    </build>
+    
+    <modules>
+        <module>logwex-core</module>
+        <module>logwex-example</module>
+    </modules>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.15</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.sun.jdmk</groupId>
+                    <artifactId>jmxtools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jmx</groupId>
+                    <artifactId>jmxri</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.mail</groupId>
+                    <artifactId>mail</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.7</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <reporting>
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>project-team</report>
+                            <report>issue-tracking</report>
+                            <report>license</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+        
+    </reporting>
+
+</project>
