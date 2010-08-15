@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Sewatech
+  ~
+  ~ This file is part of LogWEx.
+  ~
+  ~ LogWEx is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as
+  ~ published bythe Free Software Foundation, in version 3 of the
+  ~ License.
+  ~
+  ~ LogWEx is distributed in the hope that it will be useful, but
+  ~ WITHOUT ANY WARRANTY; without even the implied warranty
+  ~ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  ~ See the GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General
+  ~ Public License along with LogWEx.  If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.sewatech</groupId>
+    <artifactId>logwex-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>LogWEx example</name>
+    <description>Example for the Logging Extras for Web Applications</description>
+    <url>http://logwex.sewatech.org/</url>
+    <packaging>war</packaging>
+
+    <parent>
+        <groupId>org.sewatech</groupId>
+        <artifactId>logwex-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>assemblies/assembly.xml</descriptor>
+                    </descriptors>
+                    <appendAssemblyId>true</appendAssemblyId>
+                    <attach>true</attach>
+                    <skipAssembly>true</skipAssembly>
+                    <finalName>${project.artifactId}-${project.version}-configuration</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>manage-configuration</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.sewatech</groupId>
+                        <artifactId>logwex-core</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.sewatech</groupId>
+            <artifactId>logwex-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        
+    </dependencies>
+
+</project>
