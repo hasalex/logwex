@@ -1,0 +1,29 @@
+Version 1.0
+
+ LogWEx as a servlet Filter, with a no configuration capability.
+
+Version 1.1
+
+ LogWEx as a Tomcat valve, , with a no configuration capability.
+
+Version 1.2
+
+ Adding support of session attributes
+
+Version 1.3
+
+ Adding support of servlet context attributes
+
+Version 1.4
+
+ Adding support of request headers
+
+Version 2.x
+
+  Development of a new Appender
+
+  Enhancing Log4J initialisation in Web Applications
+
+  Enhancing Log4J initialisation in Tomcat
+
+  Support of other logging utilities ?

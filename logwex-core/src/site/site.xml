@@ -29,6 +29,8 @@
     <body>
         <menu name="LogWex core">
             <item name="Overview" href="index.html"/>
+            <item name="Tutorial" href="tutorial.html"/>
+            <item name="Road map" href="roadmap.html"/>
         </menu>
         <menu ref="reports"/>
     </body>
