@@ -81,7 +81,7 @@ public class MDCPreparerTest {
         assertEquals("Value of server port", serverPort, MDC.get("request.serverPort"));
         assertEquals("Value of user name", userName, MDC.get("request.userName"));
         assertEquals("Value of session id", sessionId, MDC.get("session.id"));
-
+        verify(request, never()).getInputStream();
     }
 
     @Test

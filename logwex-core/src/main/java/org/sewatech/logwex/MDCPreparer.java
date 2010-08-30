@@ -28,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.beans.PropertyDescriptor;
 import java.security.Principal;
+import java.util.Hashtable;
 
 /**
  * Fills the MDC with some informations from HttpServletRequest and clear it.
@@ -46,7 +47,6 @@ class MDCPreparer {
         this.configuration = configuration;
     }
 
-
     /**
      * Fills the MDC
      *
@@ -62,7 +62,7 @@ class MDCPreparer {
 
         PropertyDescriptor[] descriptors = PropertyUtils.getPropertyDescriptors(request);
         for (PropertyDescriptor descriptor : descriptors) {
-            if (descriptor.getReadMethod() != null)
+            if (descriptor.getReadMethod() != null && !"inputStream".equals(descriptor.getName()))
                 this.putPropertyInMDC(request, descriptor.getName(), "request");
         }
 
@@ -107,6 +107,8 @@ class MDCPreparer {
      */
     public void clear() {
         logger.debug("MDCPreparer.clear");
-        MDC.getContext().clear();
+        final Hashtable context = MDC.getContext();
+        if (context != null)
+            context.clear();
     }
 }

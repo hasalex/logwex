@@ -32,5 +32,15 @@
         <filter-name>logwex</filter-name>
         <url-pattern>*</url-pattern>
     </filter-mapping>
+    
+    <servlet>
+        <servlet-name>SimpleLogWExServlet</servlet-name>
+        <servlet-class>org.sewatech.logwex.example.SimpleLogWExServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimpleLogWExServlet</servlet-name>
+        <url-pattern>*.log</url-pattern>
+    </servlet-mapping>
 </web-app>
         
