@@ -26,7 +26,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.WriterAppender;
-import org.sewatech.logwex.utils.LogRedirector;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
