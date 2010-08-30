@@ -94,7 +94,7 @@ public class SimpleLogWExServlet extends HttpServlet {
         out.print("</TITLE></HEAD>\n<BODY>\n" +
                 "<h1>LogWEx Examples</h1><p>Here are the logs with pattern \"" + pattern + "\" :</p>\n");
         out.print("<HR>");
-        out.print(stream.toString().replace("\n", "<br>"));
+        out.print("<p id='logs'>" + stream.toString().replace("\n", "<br>") + "</p>");
         out.print("<HR>\n<p><a href='" + request.getContextPath() + "'>Back</a></p>\n");
         out.println("</BODY>\n</HTML>\n");
         out.close();
