@@ -25,7 +25,7 @@ import java.util.Arrays;
 
 /**
  * <p>Centralized configuration. Not yet useful.<p/>
- * <p/>
+ *
  * Created : 28 juil. 2010
  *
  * @author Alexis Hassler

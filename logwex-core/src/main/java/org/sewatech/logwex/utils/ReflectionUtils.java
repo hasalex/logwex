@@ -26,6 +26,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
+ * Utility methods for reflection. Especially useful for testing purpose.
+ *
  * Created : 8 août 2010
  *
  * @author Alexis Hassler
@@ -33,17 +35,6 @@ import java.lang.reflect.Method;
  */
 public class ReflectionUtils {
     private static final Logger logger = Logger.getLogger(ReflectionUtils.class);
-
-    public static Object invokeMethod(Class<?> targetType, String methodName, Class<?>[] argumentTypes, Object target, Object[] arguments) throws ReflectionException {
-        try {
-            Method method = targetType.getDeclaredMethod(methodName, argumentTypes);
-            method.setAccessible(true);
-            return method.invoke(target, arguments);
-        } catch (Exception e) {
-            logger.error(e);  //To change body of catch statement use File | Settings | File Templates.
-            throw new ReflectionException("Cannot call the method " + methodName, e);
-        }
-    }
 
     /**
      * <p>Invoke the first method found with same name and all arguments assignable</p>

@@ -31,8 +31,8 @@ import java.security.Principal;
 import java.util.Hashtable;
 
 /**
- * Fills the MDC with some informations from HttpServletRequest and clear it.
- * <p/>
+ * <p>Fill the MDC with some data from HttpServletRequest and clear it.<p/>
+ * 
  * Created : 28 juil. 2010
  *
  * @author Alexis Hassler
@@ -48,7 +48,10 @@ class MDCPreparer {
     }
 
     /**
-     * Fills the MDC
+     * <p>Fill the MDC. Retrieve all the readable properties of the request.</p>
+     * <p>Each property is placed in the MDC under the key request.<i>propertyName</i>. The only nested properties retrieved
+     * are the session id, under the key session.id, and the user name under key request.userName.</p>
+     * <p>The inputStream property is excluded.</p>
      *
      * @param request
      * @param servletContext for future use

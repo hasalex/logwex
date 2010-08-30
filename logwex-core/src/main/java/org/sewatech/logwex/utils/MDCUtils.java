@@ -26,6 +26,8 @@ import org.apache.log4j.MDC;
 import java.util.Map;
 
 /**
+ * Utility methods for MDC
+ *
  * Created : 9 août 2010
  *
  * @author Alexis Hassler
@@ -34,6 +36,13 @@ import java.util.Map;
 public class MDCUtils {
     private static final Logger logger = Logger.getLogger(MDCUtils.class);
 
+
+    /**
+     * Check if the MDC is empty.
+     *
+     * @param strict
+     * @return
+     */
     public static boolean isMDCEmpty(boolean strict) {
         logger.debug("isMDCEmpty ?");
         Map contextMap = MDC.getContext();

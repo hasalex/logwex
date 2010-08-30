@@ -31,6 +31,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
+ * <p>Filter HTTP requests and call the MDCPreparer</p>
+ *
  * Created : 28 juil. 2010
  *
  * @author Alexis Hassler
@@ -43,6 +45,12 @@ public class MDCPreparerFilter implements Filter {
     private MDCPreparer mdcPreparer;
     private FilterConfig filterConfig;
 
+    /**
+     * Initialize the filter. Create the MDCPreparer. 
+     *
+     * @param filterConfig
+     * @throws ServletException
+     */
     public void init(FilterConfig filterConfig) throws ServletException {
         logger.debug("MDCPreparerFilter.init");
         this.filterConfig = filterConfig;
@@ -50,6 +58,15 @@ public class MDCPreparerFilter implements Filter {
         mdcPreparer = new MDCPreparer(configuration);
     }
 
+    /**
+     * Fill the MDC by calling the MDCPreparer's fill method. 
+     *
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain
+     * @throws IOException
+     * @throws ServletException
+     */
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         logger.debug("MDCPreparerFilter.doFilter");
         mdcPreparer.fill((HttpServletRequest) servletRequest, filterConfig.getServletContext());
@@ -57,6 +74,9 @@ public class MDCPreparerFilter implements Filter {
 
     }
 
+    /**
+     * Clear the MDC.
+     */
     public void destroy() {
         logger.debug("MDCPreparerFilter.destroy");
         mdcPreparer.clear();

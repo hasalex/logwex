@@ -21,6 +21,8 @@
 package org.sewatech.logwex.utils;
 
 /**
+ * Exception thrown by a reflection method
+ *
  * Created : 8 août 2010
  *
  * @author Alexis Hassler
