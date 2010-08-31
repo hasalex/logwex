@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright 2010 Sewatech
   ~
@@ -18,18 +17,25 @@
   ~ Public License along with LogWEx.  If not, see
   ~ <http://www.gnu.org/licenses/>.
   -->
+<project name="LogWEx">
+    <bannerLeft>
+        <name>Left Banner</name>
+        <src>images/sewatech.png</src>
+        <href>http://www.sewatech.org</href>
+    </bannerLeft>
+    <publishDate position="left"/>
+    <version position="left"/>
+    <links>
+        <item name="Sewatech" href="http://www.sewatech.com"/>
+    </links>
 
-<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
-<log4j:configuration>
-<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
-    <layout class="org.apache.log4j.TTCCLayout"/>
-</appender>
-<logger name="org.sewatech">
-    <level value="INFO"/>
-</logger>
-    <root>
-        <level value="WARN"/>
-        <appender-ref ref="CONSOLE"/>
-    </root>
-</log4j:configuration>
-        
+    <body>
+        <menu name="LogWex core">
+            <item name="Overview" href="index.html"/>
+            <item name="Tutorial" href="tutorial.html"/>
+            <item name="Road map" href="roadmap.html"/>
+        </menu>
+        <menu ref="modules"/>
+        <menu ref="reports"/>
+    </body>
+</project>

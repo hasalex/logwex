@@ -28,10 +28,13 @@
     <description>Logging Extras for Web Applications</description>
     <packaging>jar</packaging>
 
-    <parent>
+    <url>http://logwex.sewatech.org/${project.artifactId}/</url>
+
+     <parent>
         <groupId>org.sewatech</groupId>
         <artifactId>logwex-all</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../logwex-core/pom.xml</relativePath>
     </parent>
 
     <dependencies>
@@ -55,5 +58,44 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <targetJdk>1.6</targetJdk>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.4.2</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+
+        </plugins>
+    </reporting>
+
+    <distributionManagement>
+        <site>
+            <id>logwex-ssh</id>
+            <url>scp://ftp.sewatech.org/homez.116/sewatech/org-sewatech-logwex/${project.artifactId}</url>
+        </site>        
+    </distributionManagement>
 
 </project>

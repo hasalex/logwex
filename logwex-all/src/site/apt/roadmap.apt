@@ -1,14 +1,17 @@
 Version 1.0
 
  LogWEx as a servlet Filter, with a no configuration capability.
+ Test within Tomcat 5.5
 
 Version 1.1
 
  LogWEx as a Tomcat valve, , with a no configuration capability.
+ Test within Tomcat 5.5
 
 Version 1.2
 
  Adding support of session attributes
+ Adding test with other applications servers
 
 Version 1.3
 

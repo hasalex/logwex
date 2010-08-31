@@ -17,7 +17,7 @@
   ~ Public License along with LogWEx.  If not, see
   ~ <http://www.gnu.org/licenses/>.
   -->
-<project name="LogWEx">
+<project name="LogWEx core">
     <bannerLeft>
         <name>Left Banner</name>
         <src>images/sewatech.png</src>
@@ -27,11 +27,7 @@
     <version position="left"/>    
 
     <body>
-        <menu name="LogWex core">
-            <item name="Overview" href="index.html"/>
-            <item name="Tutorial" href="tutorial.html"/>
-            <item name="Road map" href="roadmap.html"/>
-        </menu>
+        <menu ref="parent"/>
         <menu ref="reports"/>
     </body>
 </project>

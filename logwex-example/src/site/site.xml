@@ -27,6 +27,7 @@
     <version position="left"/>    
 
     <body>
+        <menu ref="parent"/>
         <menu name="LogWex example">
             <item name="Overview" href="index.html"/>
         </menu>

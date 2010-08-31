@@ -28,10 +28,13 @@
     <description>Example for the Logging Extras for Web Applications</description>
     <packaging>war</packaging>
 
+    <url>http://logwex.sewatech.org/${project.artifactId}</url>
+    
     <parent>
         <groupId>org.sewatech</groupId>
         <artifactId>logwex-all</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../logwex-core/pom.xml</relativePath>
     </parent>
 
     <dependencies>
@@ -129,5 +132,12 @@
         </plugins>
 
     </build>
+
+    <distributionManagement>
+        <site>
+            <id>logwex-ssh</id>
+            <url>scp://ftp.sewatech.org/homez.116/sewatech/org-sewatech-logwex/${project.artifactId}</url>
+        </site>
+    </distributionManagement>    
 
 </project>
