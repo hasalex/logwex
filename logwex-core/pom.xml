@@ -23,7 +23,7 @@
 
     <groupId>org.sewatech</groupId>
     <artifactId>logwex-core</artifactId>
-    <version>1.0.b1</version>
+    <version>1.0.b2-SNAPSHOT</version>
     <name>LogWEx core</name>
     <description>Logging Extras for Web Applications</description>
     <packaging>jar</packaging>
@@ -31,7 +31,7 @@
     <parent>
         <groupId>org.sewatech</groupId>
         <artifactId>logwex-parent</artifactId>
-        <version>1.0.b1</version>
+        <version>1.0.b2-SNAPSHOT</version>
     </parent>
 
     <dependencies>
