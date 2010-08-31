@@ -23,17 +23,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.sewatech</groupId>
     <artifactId>logwex-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>LogWEx example</name>
     <description>Example for the Logging Extras for Web Applications</description>
-    <url>http://logwex.sewatech.org/</url>
     <packaging>war</packaging>
 
     <parent>
         <groupId>org.sewatech</groupId>
-        <artifactId>logwex-parent</artifactId>
+        <artifactId>logwex-all</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
