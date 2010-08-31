@@ -43,8 +43,8 @@
     </developers>
 
     <scm>
-        <developerConnection>scm:git@github.com:hasalex/logwex.git</developerConnection>
-        <connection>scm:git://github.com/hasalex/logwex.git</connection>
+        <connection>scm:git:git://github.com/hasalex/logwex.git</connection>
+        <developerConnection>scm:git:git://github.com/hasalex/logwex.git</developerConnection>
         <url>http://github.com/hasalex/logwex</url>
     </scm>
 
