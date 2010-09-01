@@ -1,0 +1,14 @@
+Downloads
+
+*-------------------------+---------+----------+-----------+
+|                         | Mirrors | Checksum | Signature |
+*-------------------------+---------+----------+-----------+
+| LogWEx ${currentStableVersion} (tar.gz)      | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.tar.gz} logwex-${currentStableVersion}-bin.tar.gz}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.tar.gz.md5} logwex-${currentStableVersion}-bin.tar.gz.md5}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.tar.gz.asc} logwex-${currentStableVersion}-bin.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| LogWEx ${currentStableVersion} (zip)         | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.zip} logwex-${currentStableVersion}-bin.zip}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.zip.md5} logwex-${currentStableVersion}-bin.zip.md5}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-bin.zip.asc} logwex-${currentStableVersion}-bin.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+| LogWEx ${currentStableVersion} (Source tar.gz)      | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.tar.gz} logwex-${currentStableVersion}-src.tar.gz}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.tar.gz.md5} logwex-${currentStableVersion}-src.tar.gz.md5}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.tar.gz.asc} logwex-${currentStableVersion}-src.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| LogWEx ${currentStableVersion} (Source zip)         | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.zip} logwex-${currentStableVersion}-src.zip}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.zip.md5} logwex-${currentStableVersion}-src.zip.md5}} | {{{http://logwex.sewatech.org/download/logwex-${currentStableVersion}-src.zip.asc} logwex-${currentStableVersion}-src.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+
