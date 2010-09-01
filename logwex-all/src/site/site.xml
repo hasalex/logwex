@@ -24,15 +24,13 @@
         <href>http://www.sewatech.org</href>
     </bannerLeft>
     <publishDate position="left"/>
-    <version position="left"/>
-    <links>
-        <item name="Sewatech" href="http://www.sewatech.com"/>
-    </links>
+    <version position="none"/>
 
     <body>
         <menu name="LogWex core">
             <item name="Overview" href="index.html"/>
             <item name="Tutorial" href="tutorial.html"/>
+            <item name="Downloads" href="downloads.html"/>
             <item name="Road map" href="roadmap.html"/>
         </menu>
         <menu ref="modules"/>
