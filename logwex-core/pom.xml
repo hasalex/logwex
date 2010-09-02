@@ -31,7 +31,7 @@
      <parent>
         <groupId>org.sewatech.logwex</groupId>
         <artifactId>logwex-all</artifactId>
-        <version>1.0-b02-SNAPSHOT</version>
+        <version>1.0-b02</version>
         <relativePath>../logwex-core/pom.xml</relativePath>
     </parent>
 
