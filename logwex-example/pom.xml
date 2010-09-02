@@ -38,7 +38,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.sewatech</groupId>
+            <groupId>org.sewatech.logwex</groupId>
             <artifactId>logwex-core</artifactId>
             <version>1.0-b02-SNAPSHOT</version>
         </dependency>
