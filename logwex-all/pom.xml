@@ -23,7 +23,7 @@
     <groupId>org.sewatech.logwex</groupId>
     <artifactId>logwex-all</artifactId>
     <name>LogWEx</name>
-    <version>1.0-b03-SNAPSHOT</version>
+    <version>1.0-b03</version>
     <packaging>pom</packaging>
 
     <url>http://logwex.sewatech.org/${project.artifactId}/</url>
