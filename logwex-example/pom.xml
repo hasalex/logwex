@@ -31,7 +31,7 @@
     <parent>
         <groupId>org.sewatech.logwex</groupId>
         <artifactId>logwex-all</artifactId>
-        <version>1.0-b02</version>
+        <version>1.0-b03-SNAPSHOT</version>
         <relativePath>../logwex-core/pom.xml</relativePath>
     </parent>
 
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.sewatech.logwex</groupId>
             <artifactId>logwex-core</artifactId>
-            <version>1.0-b02</version>
+            <version>1.0-b03-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>httpunit</groupId>
@@ -98,11 +98,17 @@
                         <containerId>tomcat5x</containerId>
                         <zipUrlInstaller>
                             <url>
-                                http://mir2.ovh.net/ftp.apache.org/dist//tomcat/tomcat-5/v5.5.30/bin/apache-tomcat-5.5.30.zip
+                                http://mir2.ovh.net/ftp.apache.org/dist//tomcat/tomcat-5/v5.5.31/bin/apache-tomcat-5.5.31.zip
                             </url>
                         </zipUrlInstaller>
                     </container>
                     <configuration>
+                        <configfiles>
+                            <configfile>
+                                <file>${project.basedir}/src/test/resources/conf/tomcat-users.xml</file>
+                                <todir>conf/</todir>
+                            </configfile>
+                        </configfiles>
                         <properties>
                             <cargo.logging>high</cargo.logging>
                             <cargo.servlet.port>9999</cargo.servlet.port>

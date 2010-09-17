@@ -18,16 +18,9 @@
   ~ <http://www.gnu.org/licenses/>.
   -->
 <project name="LogWEx core">
-    <bannerLeft>
-        <name>Left Banner</name>
-        <src>images/sewatech.png</src>
-        <href>http://www.sewatech.org</href>
-    </bannerLeft>
-    <publishDate position="left"/>
-    <version position="left"/>    
-
     <body>
         <menu ref="parent"/>
+        <menu ref="modules"/>
         <menu ref="reports"/>
     </body>
 </project>

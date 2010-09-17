@@ -21,19 +21,35 @@
     <bannerLeft>
         <name>Left Banner</name>
         <src>images/sewatech.png</src>
-        <href>http://www.sewatech.org</href>
+        <href>http://logwex.sewatech.org/</href>
     </bannerLeft>
     <publishDate position="left"/>
     <version position="none"/>
 
     <body>
+        <head>
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-204980-5']);
+                _gaq.push(['_setDomainName', '.sewatech.org']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+        </head>
+
         <menu name="LogWex core">
             <item name="Overview" href="index.html"/>
             <item name="Tutorial" href="tutorial.html"/>
             <item name="Downloads" href="downloads.html"/>
             <item name="Road map" href="roadmap.html"/>
         </menu>
-        <menu ref="modules"/>
         <menu ref="reports"/>
     </body>
 </project>

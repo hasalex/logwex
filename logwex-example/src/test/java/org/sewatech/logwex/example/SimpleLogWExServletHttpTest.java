@@ -20,6 +20,7 @@
 
 package org.sewatech.logwex.example;
 
+import com.meterware.httpunit.AuthorizationRequiredException;
 import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.HTMLElement;
 import com.meterware.httpunit.WebClient;
@@ -48,6 +49,12 @@ public class SimpleLogWExServletHttpTest {
     private static final String SERVER_PORT = "9999";
     private static final String SCHEME = "http";
     private static final String CONTEXT_ROOT = "/logwex-example";
+    private static final String SIMPLE_SUBCONTEXT = "/simple";
+    private static final String SECURED_SUBCONTEXT = "/secure";
+    private static final String SERVLET_PATH = "/test.log";
+    private static final String USERNAME = "test";
+    private static final String PASSWORD = "test";
+    private static final String REALM = "Basic Authentication";
 
     @Before
     public void setUp() throws Exception {
@@ -64,7 +71,7 @@ public class SimpleLogWExServletHttpTest {
     @Test
     public void testSimpleLog() throws Exception {
         WebConversation wc = new WebConversation();
-        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + "/test.log");
+        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + SIMPLE_SUBCONTEXT + SERVLET_PATH);
         WebResponse logResponse = wc.getResponse(logRequest);
         assertEquals("Response status from log servlet", 200, logResponse.getResponseCode());
         HTMLElement logsElement = logResponse.getElementWithID("logs");
@@ -77,8 +84,7 @@ public class SimpleLogWExServletHttpTest {
     @Test
     public void testEnhancedLog() throws Exception {
         WebConversation wc = new WebConversation();
-        Object servletPath = "/test.log";
-        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + servletPath);
+        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + SIMPLE_SUBCONTEXT + SERVLET_PATH);
         logRequest.setParameter("pattern", "%X{request.scheme};%X{request.serverName};%X{request.serverPort};" +
                 "%X{request.contextPath};%X{request.servletPath};%X{request.protocol};%X{request.method};" +
                 "%X{request.secure};%X{session.id}");
@@ -88,10 +94,42 @@ public class SimpleLogWExServletHttpTest {
 
         assertNotNull("logs element", logsElement);
         StringBuffer expected = new StringBuffer(SCHEME).append(";").append(SERVER_NAME).append(";").append(SERVER_PORT)
-                .append(";").append(CONTEXT_ROOT).append(";").append(servletPath).append(";").append("HTTP/1.1")
+                .append(";").append(CONTEXT_ROOT).append(";").append(SIMPLE_SUBCONTEXT + SERVLET_PATH).append(";").append("HTTP/1.1")
                 .append(";").append(logRequest.getMethod()).append(";").append("false").append(";")
                 .append(logResponse.getClient().getCookieValue("JSESSIONID"));
         assertEquals("log text", expected.toString(), logsElement.getText());
     }
 
+    @Test(expected = AuthorizationRequiredException.class)
+    public void testSecuredLogNotAuthenticated() throws Exception {
+        WebConversation wc = new WebConversation();
+        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + SECURED_SUBCONTEXT + SERVLET_PATH);
+        logRequest.setParameter("pattern", "%X{request.scheme};%X{request.serverName};%X{request.serverPort};" +
+                "%X{request.contextPath};%X{request.servletPath};%X{request.protocol};%X{request.method};" +
+                "%X{request.secure};%X{session.id}");
+        WebResponse logResponse = wc.getResponse(logRequest);
+        assertEquals("Response status from log servlet", 200, logResponse.getResponseCode());
+        HTMLElement logsElement = logResponse.getElementWithID("logs");
+
+        assertNotNull("logs element", logsElement);
+        StringBuffer expected = new StringBuffer(SCHEME).append(";").append(SERVER_NAME).append(";").append(SERVER_PORT)
+                .append(";").append(CONTEXT_ROOT).append(";").append(SECURED_SUBCONTEXT + SERVLET_PATH).append(";").append("HTTP/1.1")
+                .append(";").append(logRequest.getMethod()).append(";").append("false").append(";");
+        assertEquals("log text", expected.toString(), logsElement.getText());
+    }
+
+    @Test
+    public void testSecuredLogAuthenticated() throws Exception {
+        WebConversation wc = new WebConversation();
+        WebRequest logRequest = new GetMethodWebRequest(SCHEME + "://" + SERVER_NAME + ":" + SERVER_PORT + CONTEXT_ROOT + SECURED_SUBCONTEXT + SERVLET_PATH);
+        logRequest.setParameter("pattern", "%X{request.userName}");
+
+        wc.setAuthentication(REALM, USERNAME, PASSWORD );
+        WebResponse logResponse = wc.getResponse(logRequest);
+
+        HTMLElement logsElement = logResponse.getElementWithID("logs");
+        assertNotNull("logs element", logsElement);
+        StringBuffer expected = new StringBuffer(USERNAME);
+        assertEquals("log text", expected.toString(), logsElement.getText());
+    }
 }

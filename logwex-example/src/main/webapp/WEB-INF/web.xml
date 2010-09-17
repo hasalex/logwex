@@ -42,5 +42,25 @@
         <servlet-name>SimpleLogWExServlet</servlet-name>
         <url-pattern>*.log</url-pattern>
     </servlet-mapping>
+
+    <security-constraint>
+      <web-resource-collection>
+        <web-resource-name>Protected Zone</web-resource-name>
+        <url-pattern>/secure/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+        <role-name>test</role-name>
+      </auth-constraint>
+    </security-constraint>
+    <login-config>
+      <auth-method>BASIC</auth-method>
+      <realm-name>Basic Authentication</realm-name>
+    </login-config>
+
+    <security-role>
+      <description>Test role</description>
+      <role-name>test</role-name>
+    </security-role>
+    
 </web-app>
         
