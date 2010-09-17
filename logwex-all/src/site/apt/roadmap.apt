@@ -24,7 +24,7 @@ Version 1.4
 
  * Adding support of request headers
 
-Version 2.x
+Other ideas
 
   * Development of a new Appender
 
@@ -33,3 +33,8 @@ Version 2.x
   * Enhancing Log4J initialisation in Tomcat
 
   * Support of other logging utilities ?
+
+  * Documentation should be enhanced !
+
+  * Support for non-servlet Web servers
+  
