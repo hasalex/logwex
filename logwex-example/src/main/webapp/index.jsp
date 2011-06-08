@@ -31,5 +31,6 @@
     </p>
     <p><input type="submit"></p>
 </form>
+<p>Thread name : <%= Thread.currentThread().getName() %></p>
 </body>
 </html>

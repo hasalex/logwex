@@ -22,6 +22,7 @@ package org.sewatech.logwex;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.MDC;
+import org.sewatech.logwex.utils.ToStringHelper;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -60,7 +61,7 @@ class MDCPreparer {
         logger.debug("MDCPreparer.fill");
 
         if (!(MDC.getContext() == null || MDC.getContext().isEmpty()) && logger.isInfoEnabled()) {
-            logger.info("Pay attention, MDC is not empty, it has the further elements :" + MDC.getContext().keys());
+            logger.info("Pay attention, MDC is not empty, it has the further elements :" + ToStringHelper.toString(MDC.getContext().keys()));
         }
 
         PropertyDescriptor[] descriptors = PropertyUtils.getPropertyDescriptors(request);
