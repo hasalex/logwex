@@ -93,7 +93,7 @@
                         <containerId>tomcat5x</containerId>
                         <zipUrlInstaller>
                             <url>
-                                http://mir2.ovh.net/ftp.apache.org/dist/tomcat/tomcat-5/v5.5.33/bin/apache-tomcat-5.5.33.zip
+                                http://www.apache.org/dist/tomcat/tomcat-5/v5.5.33/bin/apache-tomcat-5.5.33.zip
                             </url>
                         </zipUrlInstaller>
                     </container>
