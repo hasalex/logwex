@@ -1,0 +1,10 @@
+Welcome on the LogWEx site
+
+ LogWEx stands for Logging Extras for Web Applications. It aims to provide some utilities in order to enhance logging in
+ Web applications. It is an extension for {{{http://logging.apache.org/log4j/1.2/}Log4J}}, and helps to add the
+ <<session id>>, the authenticated <<user name>> ans some other pieces of information to yousrs logs.
+
+ LogWEx has two modules : LogWEx core and LogWEx example.  LogWEx core is the main module which you can use in your
+ deployment. LogWEx example is a small Web application which shows how to use LogWEx ; we are using it for some
+ integration tests.
+ 
