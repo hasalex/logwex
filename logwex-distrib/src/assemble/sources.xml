@@ -25,15 +25,34 @@
         <format>zip</format>
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
-    <moduleSets>
-        <moduleSet>
-            <includes>
-                <include>org.sewatech.logwex:logwex-core</include>
-                <include>org.sewatech.logwex:logwex-example</include>
-            </includes>
-            <sources>
-                <outputDirectory>${artifactId}</outputDirectory>
-            </sources>
-        </moduleSet>
-    </moduleSets>
+
+    <fileSets>
+        <fileSet>
+            <directory>../logwex-core/</directory>
+            <outputDirectory>logwex-core/</outputDirectory>
+            <excludes>
+                <exclude>*.iml</exclude>
+                <exclude>target/</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>../logwex-example/</directory>
+            <outputDirectory>logwex-example/</outputDirectory>
+            <excludes>
+                <exclude>*.iml</exclude>
+                <exclude>target/</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>../</directory>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>*.iml</exclude>
+                <exclude>target/</exclude>
+                <exclude>logwex-*/</exclude>
+                <exclude>.*</exclude>
+                <exclude>.*/</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
 </assembly>
