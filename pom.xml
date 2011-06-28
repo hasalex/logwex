@@ -220,4 +220,10 @@
         </plugins>
     </reporting>
 
+    <distributionManagement>
+        <repository>
+            <id>logwex-ssh</id>
+            <url>scp://ftp.sewatech.org/homez.116/sewatech/org-sewatech-repository/</url>
+        </repository>
+    </distributionManagement>
 </project>
