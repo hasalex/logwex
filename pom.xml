@@ -24,7 +24,7 @@
     <groupId>org.sewatech.logwex</groupId>
     <artifactId>logwex-parent</artifactId>
     <name>LogWEx</name>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <url>http://logwex.sewatech.org</url>
